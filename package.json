@@ -1,0 +1,62 @@
+{
+  "name": "sequence-analyses",
+  "version": "0.0.1",
+  "description": "Submit sequence(s) to external analysis services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint '**/*.js'",
+    "prettier": "prettier --write '**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://mmb.irbbarcelona.org/gitlab/aluciani/sequence-analyses.git"
+  },
+  "keywords": [
+    "sequence",
+    "protein",
+    "chain",
+    "ebi",
+    "interpro",
+    "interproscan",
+    "hmmer",
+    "hmmscan",
+    "domain",
+    "family",
+    "bioinformatics",
+    "irb",
+    "pdb",
+    "fasta"
+  ],
+  "author": "Aurélien Luciani <aurelien.luciani@irbbarcelona.org>",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "2.6.0",
+    "ora": "3.4.0",
+    "timing-functions": "1.0.0",
+    "yargs": "13.2.4"
+  },
+  "devDependencies": {
+    "eslint": "6.0.1",
+    "eslint-config-prettier": "5.1.0",
+    "husky": "2.5.0",
+    "lint-staged": "8.2.1",
+    "prettier": "1.18.2"
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,mjs}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
