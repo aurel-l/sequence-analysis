@@ -2,6 +2,11 @@
 const process = require('process');
 
 const yargs = require('yargs');
+const updateNotifier = require('update-notifier');
+
+const pkg = require('./package.json');
+
+updateNotifier({ pkg }).notify();
 
 const main = require('./src');
 
