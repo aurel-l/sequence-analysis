@@ -14,18 +14,18 @@ const argv = yargs
   .option('i', {
     alias: 'input',
     default: 'stdin',
-    description: 'input file or string',
+    description: 'Input file or string',
     type: 'string',
     coerce: value => (value === 'stdin' ? process.stdin : value),
   })
   .option('t', {
     alias: 'type',
     default: 'pdb',
-    description: 'type of input',
+    description: 'Type of input',
     choices: ['pdb'],
   })
   .option('email', {
-    description: 'email address (required by InterProScan)',
+    description: 'Email address (required by InterProScan)',
     type: 'string',
     coerce: string => {
       if (
@@ -40,7 +40,7 @@ const argv = yargs
   .option('o', {
     alias: 'output',
     default: 'stdout',
-    description: 'output file',
+    description: 'Output file',
     type: 'string',
     coerce: value => (value === 'stdout' ? process.stdout : value),
   })

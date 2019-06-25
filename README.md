@@ -30,3 +30,16 @@ Usage after global installation:
 ```bash
 sequence-analyses
 ```
+
+### Options
+
+| flag | alias          | description                                            | choices     | default  |
+| ---- | -------------- | ------------------------------------------------------ | ----------- | -------- |
+| -i   | --input        | Input file or string                                   | _[string]_  | `stdin`  |
+| -t   | --type         | Type of input                                          | `pdb`       | `pdb`    |
+|      | --email        | Email address (required by InterProScan)               | _[string]_  |          |
+| -o   | --output       | Output file                                            | _[string]_  | `stdout` |
+|      | --force-output | Force overwriting the output file if it already exists | _[boolean]_ | `false`  |
+| -s   | --silent       | Don't output anything to stderr (no spinner)           | _[boolean]_ | `false`  |
+|      | --version      | Show version number                                    |             |          |
+|      | --help         | Show help                                              |             |          |
