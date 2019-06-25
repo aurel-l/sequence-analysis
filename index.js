@@ -27,6 +27,15 @@ const argv = yargs
   .option('email', {
     description: 'email address (required by InterProScan)',
     type: 'string',
+    coerce: string => {
+      if (
+        !string.includes('@') ||
+        string.toLowerCase().endsWith('example.com')
+      ) {
+        throw new Error('Invalid email');
+      }
+      return string;
+    },
   })
   .option('o', {
     alias: 'output',
