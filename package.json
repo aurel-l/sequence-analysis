@@ -8,6 +8,9 @@
     "lint": "eslint '**/*.js'",
     "prettier": "prettier --write '**/*.js'"
   },
+  "bin": {
+    "sequence-analyses": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "http://mmb.irbbarcelona.org/gitlab/aluciani/sequence-analyses.git"
