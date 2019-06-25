@@ -1,6 +1,6 @@
 {
   "name": "sequence-analyses",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Submit sequence(s) to external analysis services",
   "main": "index.js",
   "scripts": {
