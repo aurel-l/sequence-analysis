@@ -49,6 +49,11 @@ const argv = yargs
     description: 'Force overwriting the output file if it already exists',
     type: 'boolean',
   })
+  .option('s', {
+    alias: 'silent',
+    default: false,
+    description: "Don't output anything to stderr (no spinner)",
+  })
   .demandOption(
     'email',
     'Please provide a contact email, it is required by InterProScan',
