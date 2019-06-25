@@ -9,9 +9,14 @@ const submitToInterProScan = require('./services/interproscan');
 
 const MIN_SEQUENCE_SIZE = 11;
 
-const main = async ({ input, type, email, output }) => {
+const main = async ({ input, type, email, output, forceOutput }) => {
   // retrieve input as string
   const inputString = await inputToString(input);
+
+  const outputWriter =
+    output instanceof Writable
+      ? output
+      : createWriteStream(output, { flags: forceOutput ? 'w+' : 'wx' });
 
   let parser;
   try {
@@ -68,10 +73,6 @@ const main = async ({ input, type, email, output }) => {
     error => spinner.fail(error),
   );
 
-  const outputWriter =
-    output instanceof Writable
-      ? output
-      : createWriteStream(output, { flags: 'w+' });
   // return mutated output
   outputWriter.write(JSON.stringify(outputObj, null, 2));
 };

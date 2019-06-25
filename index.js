@@ -44,6 +44,11 @@ const argv = yargs
     type: 'string',
     coerce: value => (value === 'stdout' ? process.stdout : value),
   })
+  .option('force-output', {
+    default: false,
+    description: 'Force overwriting the output file if it already exists',
+    type: 'boolean',
+  })
   .demandOption(
     'email',
     'Please provide a contact email, it is required by InterProScan',
